@@ -29,6 +29,12 @@ public class InstructorDetail {
     @Column(name = "hobby")
     private String hobby;
 
+    // add new field for instructor (also add getter/setters)
+
+    // add @OneToOne annotation
+    @OneToOne(mappedBy = "instructorDetail", cascade = CascadeType.ALL)
+    private Instructor instructor;
+
 
     public InstructorDetail() {}
 
@@ -62,6 +68,13 @@ public class InstructorDetail {
         this.hobby = hobby;
     }
 
+    public Instructor getInstructor() {
+        return instructor;
+    }
+
+    public void setInstructor(Instructor instructor) {
+        this.instructor = instructor;
+    }
 
     @Override
     public String toString() {
